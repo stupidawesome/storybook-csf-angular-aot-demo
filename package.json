@@ -1,0 +1,51 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "tools:dev": "ts-node-dev --project tools/tsconfig.json --respawn --clear --watch tools,src/app,src/stories/**.stories.ts --transpile-only -- ./tools/csf-transform.ts ./src/stories/button.stories.ts",
+    "stories:build": "webpack --config webpack.config.js",
+    "stories:serve": "webpack-dev-server --port=4201 --open"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.0.0",
+    "@angular/common": "~10.0.0",
+    "@angular/compiler": "~10.0.0",
+    "@angular/core": "~10.0.0",
+    "@angular/forms": "~10.0.0",
+    "@angular/platform-browser": "~10.0.0",
+    "@angular/platform-browser-dynamic": "~10.0.0",
+    "@angular/router": "~10.0.0",
+    "@ngtools/webpack": "^10.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "iso-morphic-style-loader": "^2.0.1",
+    "nodemon": "^2.0.4",
+    "rxjs": "~6.5.5",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "to-string-loader": "^1.1.6",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "tslib": "^2.0.0",
+    "webpack-dev-server": "^3.11.0",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1000.0",
+    "@angular/cli": "~10.0.0",
+    "@angular/compiler-cli": "~10.0.0",
+    "@types/node": "^12.11.1",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "ts-node": "^8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  }
+}

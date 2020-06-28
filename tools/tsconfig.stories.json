@@ -1,0 +1,7 @@
+{
+    "extends": "../tsconfig.app.json",
+    "files": [
+        "../src/stories/main.ts",
+        "../src/polyfills.ts"
+    ]
+}

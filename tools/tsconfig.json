@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "./out-tsc/app"
+    },
+    "files": [
+        "./csf-transform.ts",
+        "../node_modules/typescript/lib/typescriptServices.d.ts"
+    ]
+}
