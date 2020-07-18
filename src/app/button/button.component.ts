@@ -16,4 +16,8 @@ console.log("Ivy enabled: ", ɵivyEnabled)
 export class EasierButton {
     @Input()
     constraints = "fill"
+
+    constructor() {
+        console.log('hello!')
+    }
 }

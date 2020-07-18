@@ -61,6 +61,7 @@ function createAngularStoryApp(file?: string, identifiers?: string[]): void {
 
     const append = ts.createSourceFile("main.module.ts", `
 import { NgModule, Component } from "@angular/core"
+import { createCustomElement } from "@angular/elements"
 import { BrowserModule } from "@angular/platform-browser"
 
 @Component({
@@ -77,7 +78,18 @@ export class ModuleMetadata {}
     declarations: [StoryRoot],
     bootstrap: [StoryRoot]
 })
-export class StoryRootModule {}
+export class StoryRootModule implements DoBootstrap {
+    constructor(private injector: Injector) {}
+    ngDoBootstrap(appRef: ApplicationRef): void {
+        const element = createCustomElement(StoryRoot, {
+            injector: this.injector
+        })
+        customElements.define("angular-storyroot", element)
+        document.getElementById("root")?.appendChild(
+            document.createElement("angular-storyroot")
+        )
+    }
+}
 `, sourceFile.languageVersion)
 
     const mainFile = ts.createSourceFile("main.ts", `

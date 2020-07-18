@@ -62,7 +62,7 @@ module.exports = function () {
             new AngularCompilerPlugin({
                 tsConfigPath: path.join(__dirname, "./tools/tsconfig.stories.json"),
                 mainPath: path.join(__dirname, "./src/stories/main.ts"),
-                skipCodeGeneration: false,
+                skipCodeGeneration: true,
                 sourceMap: true,
                 directTemplateLoading: true,
             })
